@@ -40,7 +40,7 @@ class _BaseModifier():
     def __init__(self, img_size):
 
         self.TRANSFORMS = transforms.Compose([
-            transforms.Resize(img_size, interpolation=Image.ANTIALIAS),
+            transforms.Resize(img_size, interpolation=Image.LANCZOS),
             transforms.ToTensor(),
             transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
 

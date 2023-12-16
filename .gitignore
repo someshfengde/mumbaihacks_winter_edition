@@ -1,2 +1,7 @@
 .env
 mumbaihacksenv/
+features/
+images/
+models/
+*.pkl
+*.npy

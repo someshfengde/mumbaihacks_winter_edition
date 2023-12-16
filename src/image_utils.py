@@ -32,7 +32,7 @@ def remove_alpha(img):
 
 
 def resize_image(img, size):
-    return img.resize(size, Image.ANTIALIAS)
+    return img.resize(size, Image.LANCZOS)
 
 
 def process_image(img: Image, size=None):

@@ -32,8 +32,8 @@ kiwisolver
 MarkupSafe
 matplotlib
 mistune
-mkl-fft
-mkl-random
+#mkl-fft
+#mkl-random
 #nb-anacondacloud
 #nb-conda
 #nb-conda-kernels
