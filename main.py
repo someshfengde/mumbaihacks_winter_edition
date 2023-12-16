@@ -19,8 +19,8 @@ import base64
 install()
 load_dotenv()
 
-redis = get_redis_connection(url=env.get("REDIS_OM_URL"))
-Migrator().run()
+# redis = get_redis_connection(url=env.get("REDIS_OM_URL"))
+# Migrator().run()
 
 app = FastAPI()
 

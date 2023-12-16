@@ -1,0 +1,28 @@
+Metadata-Version: 2.1
+Name: rich-traceback
+Version: 1.0.3
+Summary: Rich Traceback Logger
+Home-page: https://github.com/laurb9/rich-traceback
+Author: Laurentiu Badea
+Author-email: laurb9+rich-traceback@gmail.com
+License: Apache License 2.0
+Keywords: traceback log syslog informative stack traces
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Environment :: No Input/Output (Daemon)
+Classifier: License :: OSI Approved :: Apache Software License
+Classifier: Operating System :: POSIX :: Linux
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 3
+Provides-Extra: dev
+Requires-Dist: check-manifest ; extra == 'dev'
+Provides-Extra: test
+Requires-Dist: coverage ; extra == 'test'
+
+Informative Traceback Logging for Python
+
+Informative stack traces showing method parameters
+Simple standalone logger with console syslog support.
+
+

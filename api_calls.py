@@ -1,13 +1,18 @@
 import httpx
-from openai import OpenAI
+import google.generativeai as genai
 from funcs import functions, other_func
+from openai import OpenAI
+ 
 import asyncify
 from helpers.redis_helpers import get_user, create_generation
 import asyncio
 import json
 from helpers.upload_image import upload_image
 import requests
-
+from dotenv import load_dotenv
+load_dotenv()
+import os 
+genai.configure(api_key = os.environ["GOOGLE_API_KEY"])
 client = OpenAI()
 
 async def ask_shopwise(item_name: str):
@@ -31,27 +36,13 @@ async def ask_shopwise(item_name: str):
 @asyncify
 def get_fashion_image(base64_image: str, user_gender: str):
     image = upload_image(base64_image)
-    response = client.chat.completions.create(
-        model="gpt-4-vision-preview",
-        messages=[
-            {
-                "role": "user",
-                "content": [
-                    {
-                        "type": "text",
-                        "text": "What’s in this image? Describe it in as detail as possible. You are a fashion stylist. Be as descriptive about the fashion items as possible.",
-                    },
-                    {
-                        "type": "image_url",
-                        "image_url": {
-                            "url": f"{image}",
-                        },
-                    },
-                ],
-            }
-        ],
-        max_tokens=250,
-    )
+
+    connection = genai.GenerativeModel(model = "gemini-pro-vision")
+
+    response = connection.generate_content(content = ["What’s in this image? Describe it in as detail as possible. You are a fashion stylist. Be as descriptive about the fashion items as possible.", 
+                                                      image])
+    
+    
 
     function_response = client.chat.completions.create(
         model="gpt-3.5-turbo-1106",
@@ -61,7 +52,7 @@ def get_fashion_image(base64_image: str, user_gender: str):
                 "content": [
                     {
                         "type": "text",
-                        "text": f"What’s in this image? Describe it in as detail as possible. You are a fashion stylist. Be as descriptive about the fashion items as possible. Here's the description of the image: {response.choices[0]}. The gender of the user is {user_gender}",
+                        "text": f"What’s in this image? Describe it in as detail as possible. You are a fashion stylist. Be as descriptive about the fashion items as possible. Here's the description of the image: {response.text}. The gender of the user is {user_gender}",
                     },
                 ],
             }
