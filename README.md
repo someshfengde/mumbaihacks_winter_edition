@@ -28,6 +28,7 @@ StyleSynth is a fashion recommendation application that utilizes a Flask backend
 - **Clean UI**: The Flutter frontend provides a visually appealing and user-friendly interface, ensuring a smooth and enjoyable interaction for users.
 
 ## Demo Video
+https://github.com/someshfengde/mumbaihacks_winter_edition_2023/assets/42097653/49ec7fa5-3dea-401f-8d95-f391747c7582
 
 Check out our demo video to see StyleSynth in action. This video showcases the application's features, including image input, recommendation generation, and the overall user experience.
 
