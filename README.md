@@ -13,8 +13,7 @@ Welcome to StyleSynth, a Flutter application with a Flask backend that leverages
 5. [Frontend](#frontend)
 6. [Getting Started](#getting-started)
 7. [Dependencies](#dependencies)
-8. [Contact](#contact)
-9. [License](#license)
+
 
 ## Overview
 
@@ -57,4 +56,4 @@ To run the StyleSynth application locally, follow these steps:
 - Flutter
 - Fashion GAN
 - ResNet50
-- (Include any additional dependencies)
+- find other dependencies in the `pip_requirements.txt` and `pubspec.yaml` files. 
